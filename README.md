@@ -1,0 +1,1 @@
+Read All Lines from a source Location.

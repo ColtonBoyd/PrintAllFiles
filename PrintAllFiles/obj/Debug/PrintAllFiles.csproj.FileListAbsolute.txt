@@ -8,3 +8,13 @@ C:\Users\colto\Documents\Visual Studio 2017\Projects\PrintAllFiles\PrintAllFiles
 C:\Users\colto\Documents\Visual Studio 2017\Projects\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.exe
 C:\Users\colto\Documents\Visual Studio 2017\Projects\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.pdb
 C:\Users\colto\Documents\Visual Studio 2017\Projects\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.Form1.resources
+D:\Repos\PrintAllFiles\PrintAllFiles\bin\Debug\PrintAllFiles.exe.config
+D:\Repos\PrintAllFiles\PrintAllFiles\bin\Debug\PrintAllFiles.exe
+D:\Repos\PrintAllFiles\PrintAllFiles\bin\Debug\PrintAllFiles.pdb
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.csprojAssemblyReference.cache
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.Form1.resources
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.Properties.Resources.resources
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.csproj.GenerateResource.cache
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.csproj.CoreCompileInputs.cache
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.exe
+D:\Repos\PrintAllFiles\PrintAllFiles\obj\Debug\PrintAllFiles.pdb

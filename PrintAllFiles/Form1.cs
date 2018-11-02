@@ -52,11 +52,16 @@ namespace PrintAllFiles
                     double DirectoriesCount = 0;
                     double DivisionNumber = 20.0;
                     //////////////////////////This needs to be changed
+                    if (Directories.Count() < 20){
+                        DirectoriesCount = Directories.Count();
+                        DivisionNumber = 1;
+                    }
+
                     if (Directories.Count() > 60)
                     {
                         DirectoriesCount = (Directories.Count() / DivisionNumber) + .5;
                         DirectoriesCount = Math.Round(DirectoriesCount);
-                      
+
                     }
 
 
@@ -77,9 +82,7 @@ namespace PrintAllFiles
 
 
 
-
                     Task.WaitAll(taskCeption.ToArray());
-
 
 
 
@@ -111,14 +114,14 @@ namespace PrintAllFiles
 
             lstBoxFileList.Invoke(new MethodInvoker(delegate
                 {
-                    var lstBoxFileListDataSource = PrintList(FolderList).GroupBy(x => x).Select(y => y.First()).OrderBy(x=>x).ToList();
-                lstBoxFileListDataSource.Add(lstBoxFileListDataSource.Count()+"");
+                    var lstBoxFileListDataSource = PrintList(FolderList).GroupBy(x => x).Select(y => y.First()).OrderBy(x => x).ToList();
+                    lstBoxFileListDataSource.Add(lstBoxFileListDataSource.Count() + "");
                     lstBoxFileList.DataSource = lstBoxFileListDataSource;
-                    
+
                 }));
 
         }
-        
+
         private void BreakUpSearch(List<string> xx, int i, List<ListOfFoldersFromThread> fileList)
         {
 
@@ -138,6 +141,7 @@ namespace PrintAllFiles
         {
             string prevFolderName = DirectoryName;
             List<string> FilesWritten = new List<string>();
+            List<string> FilesToWrite= new List<string>();
             if (!Directory.Exists("Folder"))
             {
                 Directory.CreateDirectory("Folder");
@@ -146,7 +150,7 @@ namespace PrintAllFiles
             foreach (var ThreadResponse in list)
             {
 
-    
+
                 string FileName = "";
                 foreach (var item in ThreadResponse.Folders)
                 {
@@ -206,8 +210,8 @@ namespace PrintAllFiles
                             string Directory = DirectoryName.Substring(DirectoryName.LastIndexOf("\\") + 1);
                             item.Files.Insert(0, FileName);
                             item.Files.Add("\n\n\n");
-                            File.AppendAllLines("Folder/" + Directory + ".txt", item.Files);
-                            FilesWritten.Add("File created \"" + FileName + "\"");
+                            FilesToWrite.AddRange(item.Files);
+                            FilesWritten.Add("\"" + FileName + "\" Appended");
 
                         }
                     }
@@ -215,6 +219,8 @@ namespace PrintAllFiles
 
 
             }
+            if (FilesToWrite.Count!=0)
+            File.AppendAllLines("Folder/Output.txt", FilesToWrite);
             return FilesWritten;
         }
 
